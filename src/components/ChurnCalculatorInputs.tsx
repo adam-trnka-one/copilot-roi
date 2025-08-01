@@ -52,9 +52,7 @@ const ChurnCalculatorInputs = ({
       <CardContent className="space-y-6">
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="customer-count" className="calculator-label">
-              Number of customers
-            </Label>
+            <Label htmlFor="customer-count" className="calculator-label">Number of monthly customer conversations</Label>
             <InfoTooltip content="Total number of active customers in your database" />
           </div>
           <div className="flex items-center gap-4">
@@ -65,9 +63,7 @@ const ChurnCalculatorInputs = ({
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="revenue-per-customer" className="calculator-label">
-              Average monthly revenue per customer (USD)
-            </Label>
+            <Label htmlFor="revenue-per-customer" className="calculator-label">Resolved conversations (resolutions) with Copilot</Label>
             <InfoTooltip content="Average monthly revenue generated per customer" />
           </div>
           <div className="flex items-center gap-4">
@@ -78,9 +74,7 @@ const ChurnCalculatorInputs = ({
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="churn-rate" className="calculator-label">
-              Current monthly churn rate (%)
-            </Label>
+            <Label htmlFor="churn-rate" className="calculator-label">Live agent hourly cost (USD/hour)</Label>
             <InfoTooltip content="Percentage of customers who cancel each month" />
           </div>
           <div className="flex items-center gap-4">
@@ -91,9 +85,7 @@ const ChurnCalculatorInputs = ({
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="churn-reduction" className="calculator-label">
-              Expected churn reduction (%)
-            </Label>
+            <Label htmlFor="churn-reduction" className="calculator-label">Average handling time per conversation (minutes)</Label>
             <InfoTooltip content="Based on our customers' average improvements in user retention rates" />
           </div>
           <div className="flex items-center gap-4">
