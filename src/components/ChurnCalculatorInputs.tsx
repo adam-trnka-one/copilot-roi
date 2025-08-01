@@ -99,7 +99,7 @@ const ChurnCalculatorInputs = ({
             <Slider id="handling-time" min={7} max={60} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
             <div className="relative">
               <Input type="number" value={handlingTime} min={7} max={60} step="1" onChange={e => handleInputChange(setHandlingTime, e.target.value, 7, 60)} className="w-20 pr-8" />
-              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-muted-foreground">min</span>
+              
             </div>
           </div>
         </div>
