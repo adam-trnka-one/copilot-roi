@@ -2,72 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ROI Calculator Design System - Corporate & Professional
-All colors MUST be HSL.
-*/
+/* Product Fruits Business Impact Calculator - Exact Copy */
+/* All colors MUST be HSL and match the original repository */
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 210 24% 16%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 24% 16%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 24% 16%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 213 94% 68%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 213 94% 85%;
+    --primary: 24 100% 56%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 24% 16%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 16% 50%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 100%;
-
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 213 94% 68%;
-
-    /* Corporate gradient system */
-    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 85%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 24% 16%), hsl(213 94% 68%));
-    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 50%));
-    
-    /* Professional shadows */
-    --shadow-soft: 0 2px 8px hsl(210 24% 16% / 0.04);
-    --shadow-medium: 0 4px 16px hsl(210 24% 16% / 0.08);
-    --shadow-strong: 0 8px 32px hsl(210 24% 16% / 0.12);
-    --shadow-glow: 0 0 24px hsl(213 94% 68% / 0.3);
+    --ring: 24 100% 56%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 24 100% 56%;
   }
 
   .dark {
@@ -80,7 +57,7 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 24 100% 56%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -100,12 +77,12 @@ All colors MUST be HSL.
     --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 24 100% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 24 100% 56%;
   }
 }
 
@@ -116,5 +93,38 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .calculator-input {
+    @apply flex flex-col space-y-2;
+  }
+
+  .calculator-label {
+    @apply text-sm font-medium text-gray-700;
+  }
+
+  .calculator-value-display {
+    @apply text-sm text-gray-500;
+  }
+
+  .gradient-orange {
+    @apply bg-gradient-to-r from-roi-orange-light to-roi-orange-dark;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
