@@ -41,10 +41,7 @@ const ChurnCalculatorResults = ({
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Human agent hours saved</span>
-              <span className="font-normal">{formatCurrency((customerCount * 0.69 * averageHandlingTime) / 60)} 
-                <br />
-                <span className="text-xs text-gray-500">Calculated as: Conversations resolved by Copilot * Handling time per conversation / 60</span>
-              </span>
+              <span className="font-normal">{formatCurrency((customerCount * 0.69 * averageHandlingTime) / 60)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
