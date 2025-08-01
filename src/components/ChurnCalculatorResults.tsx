@@ -26,7 +26,7 @@ const ChurnCalculatorResults = ({
   };
   return <>
       <CardHeader>
-        <CardTitle>Your support cost savings</CardTitle>
+        <CardTitle>Your Support Cost Savings</CardTitle>
         <CardDescription>Based on your data, here's the business impact of AI Copilot</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
