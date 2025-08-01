@@ -96,9 +96,9 @@ const ChurnCalculatorInputs = ({
             <InfoTooltip content="Average time spent handling each customer conversation" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider id="handling-time" min={7} max={60} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
+            <Slider id="handling-time" min={1} max={100} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
             <div className="relative">
-              <Input type="number" value={handlingTime} min={7} max={60} step="1" onChange={e => handleInputChange(setHandlingTime, e.target.value, 7, 60)} className="w-20 pr-8" />
+              <Input type="number" value={handlingTime} min={1} max={100} step="1" onChange={e => handleInputChange(setHandlingTime, e.target.value, 1, 100)} className="w-20 pr-8" />
               
             </div>
           </div>
