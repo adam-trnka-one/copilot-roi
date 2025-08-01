@@ -7,7 +7,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl text-gray-900 mb-4 font-semibold md:text-4xl">Calculate the support AI Copilot impact</h2>
-              <p className="text-lg whitespace-nowrap overflow-x-auto mx-auto text-slate-950 px-0">Poor onboarding doesn't just frustrate users. It costs you in churn, conversions, and support overhead.</p>
+              <p className="whitespace-nowrap overflow-x-auto mx-auto text-slate-950 px-0 text-lg font-normal">Free your support team and cut costs you don’t need!</p>
             </div>
 
             <div className="mb-8">
