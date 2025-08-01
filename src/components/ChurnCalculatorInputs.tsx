@@ -57,7 +57,7 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="customer-count" className="calculator-label">Number of monthly customer conversations</Label>
-            <InfoTooltip content="Total number of active customers in your database" />
+            <InfoTooltip content="How many customer conversations your team handles each month" />
           </div>
           <div className="flex items-center gap-4">
             <Slider id="customer-count" min={0} max={CUSTOMER_STEPS.length - 1} step={1} value={[customerSliderIndex]} onValueChange={([index]) => setSliderByIndex(index)} className="flex-1" />
