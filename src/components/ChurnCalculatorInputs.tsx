@@ -85,8 +85,8 @@ const ChurnCalculatorInputs = ({
             <InfoTooltip content="Average cost per hour for live agent support" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider id="churn-rate" min={10} max={100} step={1} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
-            <Input type="number" value={currentChurnRate} min={10} max={100} step="1" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 10, 100)} className="w-20" />
+            <Slider id="churn-rate" min={5} max={50} step={1} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
+            <Input type="number" value={currentChurnRate} min={5} max={50} step="1" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 5, 50)} className="w-20" />
           </div>
         </div>
 
