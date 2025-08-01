@@ -14,7 +14,7 @@ const Index = () => {
               <div className="border border-[#03bf92] rounded-lg p-4 mb-8 flex items-start bg-[#03bf92]/[0.06]">
                 <div>
                   <p className="text-sm text-gray-800">
-                    Product Fruits Support Copilot resolves <strong>50–80%</strong> of customer conversations on its own - never reaching your live agents.
+                    Product Fruits Support Copilot resolves <strong>50–80% of customer conversations</strong> on its own - never reaching your live agents.
                   </p>
                 </div>
               </div>
