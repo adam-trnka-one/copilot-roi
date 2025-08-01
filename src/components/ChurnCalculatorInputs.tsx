@@ -6,7 +6,6 @@ import { Slider } from "@/components/ui/slider";
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { CUSTOMER_STEPS } from "@/utils/customerSteps";
 import { HelpCircle } from "lucide-react";
-
 interface ChurnCalculatorInputsProps {
   customerCount: number;
   setCustomerCount: React.Dispatch<React.SetStateAction<number>>;
@@ -19,9 +18,11 @@ interface ChurnCalculatorInputsProps {
   handleCustomerCountInputChange: (setter: React.Dispatch<React.SetStateAction<number>>, value: string) => void;
   handleInputChange: (setter: React.Dispatch<React.SetStateAction<number>>, value: string, min: number, max: number) => void;
 }
-
-const InfoTooltip = ({ content }: { content: string }) => (
-  <TooltipProvider>
+const InfoTooltip = ({
+  content
+}: {
+  content: string;
+}) => <TooltipProvider>
     <Tooltip>
       <TooltipTrigger className="cursor-help">
         <HelpCircle className="h-4 w-4 text-gray-400" />
@@ -30,9 +31,7 @@ const InfoTooltip = ({ content }: { content: string }) => (
         <p className="text-white text-opacity-95">{content}</p>
       </TooltipContent>
     </Tooltip>
-  </TooltipProvider>
-);
-
+  </TooltipProvider>;
 const ChurnCalculatorInputs = ({
   customerCount,
   setCustomerCount,
@@ -45,11 +44,10 @@ const ChurnCalculatorInputs = ({
   handleCustomerCountInputChange,
   handleInputChange
 }: ChurnCalculatorInputsProps) => {
-  return (
-    <>
+  return <>
       <CardHeader>
         <CardTitle>Enter your data</CardTitle>
-        <CardDescription>We'll use this to calculate your business impact</CardDescription>
+        <CardDescription>We'll use this to calculate your support AI Copilot impact</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="calculator-input">
@@ -60,24 +58,8 @@ const ChurnCalculatorInputs = ({
             <InfoTooltip content="Total number of active customers in your database" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider
-              id="customer-count"
-              min={0}
-              max={CUSTOMER_STEPS.length - 1}
-              step={1}
-              value={[customerSliderIndex]}
-              onValueChange={([index]) => setSliderByIndex(index)}
-              className="flex-1"
-            />
-            <Input
-              type="number"
-              value={customerCount}
-              min={CUSTOMER_STEPS[0]}
-              max={CUSTOMER_STEPS[CUSTOMER_STEPS.length - 1]}
-              step="100"
-              onChange={(e) => handleCustomerCountInputChange(setCustomerCount, e.target.value)}
-              className="w-24"
-            />
+            <Slider id="customer-count" min={0} max={CUSTOMER_STEPS.length - 1} step={1} value={[customerSliderIndex]} onValueChange={([index]) => setSliderByIndex(index)} className="flex-1" />
+            <Input type="number" value={customerCount} min={CUSTOMER_STEPS[0]} max={CUSTOMER_STEPS[CUSTOMER_STEPS.length - 1]} step="100" onChange={e => handleCustomerCountInputChange(setCustomerCount, e.target.value)} className="w-24" />
           </div>
         </div>
 
@@ -89,24 +71,8 @@ const ChurnCalculatorInputs = ({
             <InfoTooltip content="Average monthly revenue generated per customer" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider
-              id="revenue-per-customer"
-              min={10}
-              max={500}
-              step={10}
-              value={[averageRevenuePerCustomer]}
-              onValueChange={(value) => setAverageRevenuePerCustomer(value[0])}
-              className="flex-1"
-            />
-            <Input
-              type="number"
-              value={averageRevenuePerCustomer}
-              min={10}
-              max={500}
-              step="10"
-              onChange={(e) => handleInputChange(setAverageRevenuePerCustomer, e.target.value, 10, 500)}
-              className="w-24"
-            />
+            <Slider id="revenue-per-customer" min={10} max={500} step={10} value={[averageRevenuePerCustomer]} onValueChange={value => setAverageRevenuePerCustomer(value[0])} className="flex-1" />
+            <Input type="number" value={averageRevenuePerCustomer} min={10} max={500} step="10" onChange={e => handleInputChange(setAverageRevenuePerCustomer, e.target.value, 10, 500)} className="w-24" />
           </div>
         </div>
 
@@ -118,24 +84,8 @@ const ChurnCalculatorInputs = ({
             <InfoTooltip content="Percentage of customers who cancel each month" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider
-              id="churn-rate"
-              min={1}
-              max={20}
-              step={0.5}
-              value={[currentChurnRate]}
-              onValueChange={(value) => setCurrentChurnRate(value[0])}
-              className="flex-1"
-            />
-            <Input
-              type="number"
-              value={currentChurnRate}
-              min={1}
-              max={20}
-              step="0.5"
-              onChange={(e) => handleInputChange(setCurrentChurnRate, e.target.value, 1, 20)}
-              className="w-24"
-            />
+            <Slider id="churn-rate" min={1} max={20} step={0.5} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
+            <Input type="number" value={currentChurnRate} min={1} max={20} step="0.5" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 1, 20)} className="w-24" />
           </div>
         </div>
 
@@ -151,8 +101,6 @@ const ChurnCalculatorInputs = ({
           </div>
         </div>
       </CardContent>
-    </>
-  );
+    </>;
 };
-
 export default ChurnCalculatorInputs;
