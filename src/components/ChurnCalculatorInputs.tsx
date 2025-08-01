@@ -74,7 +74,7 @@ const ChurnCalculatorInputs = ({
             <Slider id="revenue-per-customer" min={50} max={80} step={1} value={[averageRevenuePerCustomer]} onValueChange={value => setAverageRevenuePerCustomer(value[0])} className="flex-1" />
             <div className="relative">
               <Input type="number" value={averageRevenuePerCustomer} min={50} max={80} step="1" onChange={e => handleInputChange(setAverageRevenuePerCustomer, e.target.value, 50, 80)} className="w-20 pr-6" />
-              
+              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-muted-foreground">%</span>
             </div>
           </div>
         </div>
