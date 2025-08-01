@@ -63,7 +63,7 @@ const ChurnCalculatorInputs = ({
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="revenue-per-customer" className="calculator-label">Resolved conversations (resolutions) with Copilot</Label>
+            <Label htmlFor="revenue-per-customer" className="calculator-label">Resolved conversations (resolutions) with Copilot (%)</Label>
             <InfoTooltip content="Percentage of conversations resolved by the AI Copilot without human intervention" />
           </div>
           <div className="flex items-center gap-4">
