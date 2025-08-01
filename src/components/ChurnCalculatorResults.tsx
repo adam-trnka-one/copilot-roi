@@ -3,7 +3,6 @@ import { CardHeader, CardTitle, CardDescription, CardContent } from "@/component
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { formatCurrency, formatNumber } from "@/utils/churnCalculator";
-
 interface ChurnCalculatorResultsProps {
   customerCount: number;
   currentChurnRate: number;
@@ -12,7 +11,6 @@ interface ChurnCalculatorResultsProps {
   } | null;
   productFruitsPlanPrice: number;
 }
-
 const ChurnCalculatorResults = ({
   customerCount,
   currentChurnRate,
@@ -20,23 +18,20 @@ const ChurnCalculatorResults = ({
   productFruitsPlanPrice
 }: ChurnCalculatorResultsProps) => {
   if (!results) return null;
-
   const handleDownloadPDF = () => {
     // This would trigger the PDF download functionality
     console.log("Download PDF clicked");
   };
-
-  return (
-    <>
+  return <>
       <CardHeader>
-        <CardTitle>Your user retention gains</CardTitle>
-        <CardDescription>Based on your data, here's the business impact of Product Fruits</CardDescription>
+        <CardTitle>Your support cost savings</CardTitle>
+        <CardDescription>Based on your data, here's the business impact of AI Copilot</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-6 animate-fade-in">
           <div className="space-y-4">
             <div className="flex justify-between items-center border-b pb-2">
-              <span className="text-sm text-gray-600">Saved customers</span>
+              <span className="text-sm text-gray-600 font-normal">Sessions resolved by Copilot</span>
               <span className="font-medium">
                 {formatNumber(Math.round(customerCount * currentChurnRate / 100 * 0.3))}
               </span>
@@ -65,18 +60,13 @@ const ChurnCalculatorResults = ({
                 {formatCurrency((results.monthlySavings - productFruitsPlanPrice) * 12)}
               </p>
             </div>
-            <Button
-              onClick={handleDownloadPDF}
-              className="bg-[#FF751D] hover:bg-[#E05A00] text-white flex items-center gap-2"
-            >
+            <Button onClick={handleDownloadPDF} className="bg-[#FF751D] hover:bg-[#E05A00] text-white flex items-center gap-2">
               <Download className="h-4 w-4" />
               Download PDF
             </Button>
           </div>
         </div>
       </CardContent>
-    </>
-  );
+    </>;
 };
-
 export default ChurnCalculatorResults;
