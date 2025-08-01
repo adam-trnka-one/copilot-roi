@@ -13,6 +13,8 @@ interface ChurnCalculatorInputsProps {
   setAverageRevenuePerCustomer: React.Dispatch<React.SetStateAction<number>>;
   currentChurnRate: number;
   setCurrentChurnRate: React.Dispatch<React.SetStateAction<number>>;
+  handlingTime: number;
+  setHandlingTime: React.Dispatch<React.SetStateAction<number>>;
   customerSliderIndex: number;
   setSliderByIndex: (index: number) => void;
   handleCustomerCountInputChange: (setter: React.Dispatch<React.SetStateAction<number>>, value: string) => void;
@@ -39,6 +41,8 @@ const ChurnCalculatorInputs = ({
   setAverageRevenuePerCustomer,
   currentChurnRate,
   setCurrentChurnRate,
+  handlingTime,
+  setHandlingTime,
   customerSliderIndex,
   setSliderByIndex,
   handleCustomerCountInputChange,
@@ -88,11 +92,15 @@ const ChurnCalculatorInputs = ({
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="churn-reduction" className="calculator-label">Average handling time per conversation (minutes)</Label>
-            <InfoTooltip content="Based on our customers' average improvements in user retention rates" />
+            <Label htmlFor="handling-time" className="calculator-label">Average handling time per conversation (minutes)</Label>
+            <InfoTooltip content="Average time spent handling each customer conversation" />
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-neutral-500">30%</span>
+            <Slider id="handling-time" min={7} max={60} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
+            <div className="relative">
+              <Input type="number" value={handlingTime} min={7} max={60} step="1" onChange={e => handleInputChange(setHandlingTime, e.target.value, 7, 60)} className="w-20 pr-8" />
+              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-muted-foreground">min</span>
+            </div>
           </div>
         </div>
       </CardContent>
