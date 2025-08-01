@@ -38,12 +38,12 @@ const ChurnCalculatorResults = ({
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
-              <span className="text-sm text-gray-600">Human hours saved</span>
+              <span className="text-sm text-gray-600">Revenue saved monthly</span>
               <span className="font-medium">{formatCurrency(results.monthlySavings)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
-              <span className="text-sm text-gray-600">Monthly labor cost savings</span>
+              <span className="text-sm text-gray-600">Copilot monthly cost</span>
               <span className="font-medium text-[#ff4747]">-{formatCurrency(productFruitsPlanPrice)}</span>
             </div>
 
