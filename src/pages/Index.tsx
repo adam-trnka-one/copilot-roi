@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ChurnCalculator from "@/components/ChurnCalculator";
 import { useIsMobile } from "@/hooks/use-mobile";
-import Calculator from "@/components/Calculator";
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -18,12 +17,9 @@ const Index = () => {
             </div>
 
             <Tabs defaultValue="churn" className="mb-8">
-              <TabsList className="grid w-full grid-cols-2 gap-2 mb-8 bg-white">
+              <TabsList className="grid w-full grid-cols-1 gap-2 mb-8 bg-white">
                 <TabsTrigger value="churn" className="flex items-center gap-1 text-xs sm:text-base px-2 sm:px-3 py-1.5 border border-gray-300 bg-white">
                   <span>{isMobile ? "Churn" : "Churn reduction"}</span>
-                </TabsTrigger>
-                <TabsTrigger value="support" className="flex items-center gap-1 text-xs sm:text-base px-2 sm:px-3 py-1.5 border border-gray-300 bg-white">
-                  <span>{isMobile ? "Support" : "Support cost reduction"}</span>
                 </TabsTrigger>
               </TabsList>
 
@@ -40,18 +36,6 @@ const Index = () => {
                 <ChurnCalculator />
               </TabsContent>
 
-              <TabsContent value="support">
-                <div className="border border-[#03bf92] rounded-lg p-4 mb-8 flex items-start bg-[#03bf92]/[0.06]">
-                  <div>
-                    <p className="text-sm text-gray-800">
-                      Clients using Product Fruits see a <strong>20-35% reduction</strong> in
-                      support tickets after implementing automated user onboarding.
-                    </p>
-                  </div>
-                </div>
-
-                <Calculator />
-              </TabsContent>
 
             </Tabs>
           </div>
