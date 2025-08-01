@@ -59,7 +59,7 @@ const ChurnCalculatorResults = ({
             <div className="text-center">
               <p className="text-sm text-gray-500">Your monthly savings</p>
               <p className="text-[28pt] font-bold text-[#03BF92]">
-                {formatCurrency(results.monthlySavings - productFruitsPlanPrice)}
+                {formatCurrency(results.monthlySavings)}
               </p>
             </div>
             <Button onClick={handleDownloadPDF} className="bg-[#FF751D] hover:bg-[#E05A00] text-white flex items-center gap-2">
