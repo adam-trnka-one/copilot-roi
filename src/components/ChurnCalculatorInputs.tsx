@@ -64,11 +64,14 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="revenue-per-customer" className="calculator-label">Resolved conversations (resolutions) with Copilot</Label>
-            <InfoTooltip content="Average monthly revenue generated per customer" />
+            <InfoTooltip content="Percentage of conversations resolved by the AI Copilot without human intervention" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider id="revenue-per-customer" min={10} max={500} step={10} value={[averageRevenuePerCustomer]} onValueChange={value => setAverageRevenuePerCustomer(value[0])} className="flex-1" />
-            <Input type="number" value={averageRevenuePerCustomer} min={10} max={500} step="10" onChange={e => handleInputChange(setAverageRevenuePerCustomer, e.target.value, 10, 500)} className="w-24" />
+            <Slider id="revenue-per-customer" min={50} max={80} step={1} value={[averageRevenuePerCustomer]} onValueChange={value => setAverageRevenuePerCustomer(value[0])} className="flex-1" />
+            <div className="relative">
+              <Input type="number" value={averageRevenuePerCustomer} min={50} max={80} step="1" onChange={e => handleInputChange(setAverageRevenuePerCustomer, e.target.value, 50, 80)} className="w-20 pr-6" />
+              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-muted-foreground">%</span>
+            </div>
           </div>
         </div>
 
