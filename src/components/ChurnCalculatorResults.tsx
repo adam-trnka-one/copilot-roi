@@ -33,7 +33,7 @@ const ChurnCalculatorResults = ({
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600 font-normal">Sessions resolved by Copilot</span>
               <span className="font-medium">
-                {formatNumber(Math.round(customerCount * currentChurnRate / 100 * 0.3))}
+                {formatNumber(Math.round(customerCount * 0.69))}
               </span>
             </div>
 
