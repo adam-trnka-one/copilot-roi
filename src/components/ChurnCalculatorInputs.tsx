@@ -78,11 +78,14 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="churn-rate" className="calculator-label">Live agent hourly cost (USD/hour)</Label>
-            <InfoTooltip content="Percentage of customers who cancel each month" />
+            <InfoTooltip content="Average cost per hour for live agent support" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider id="churn-rate" min={1} max={20} step={0.5} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
-            <Input type="number" value={currentChurnRate} min={1} max={20} step="0.5" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 1, 20)} className="w-24" />
+            <Slider id="churn-rate" min={10} max={100} step={1} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
+            <div className="relative">
+              <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-sm text-muted-foreground">$</span>
+              <Input type="number" value={currentChurnRate} min={10} max={100} step="1" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 10, 100)} className="w-20 pl-6" />
+            </div>
           </div>
         </div>
 
