@@ -57,7 +57,7 @@ const ChurnCalculatorResults = ({
 
           <div className="pt-4 flex flex-col justify-center items-center space-y-4">
             <div className="text-center">
-              <p className="text-sm text-gray-500">Monthly support cost savings</p>
+              <p className="text-sm text-gray-500">Your monthly savings</p>
               <p className="text-[28pt] font-bold text-[#03BF92]">
                 {formatCurrency((results.monthlySavings - productFruitsPlanPrice) * 12)}
               </p>
