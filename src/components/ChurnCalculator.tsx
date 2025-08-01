@@ -105,6 +105,7 @@ const ChurnCalculator = () => {
           currentChurnRate={currentChurnRate}
           results={results}
           productFruitsPlanPrice={productFruitsPlanPrice}
+          averageHandlingTime={handlingTime}
         />
       </Card>
 

@@ -10,12 +10,14 @@ interface ChurnCalculatorResultsProps {
     monthlySavings: number;
   } | null;
   productFruitsPlanPrice: number;
+  averageHandlingTime: number;
 }
 const ChurnCalculatorResults = ({
   customerCount,
   currentChurnRate,
   results,
-  productFruitsPlanPrice
+  productFruitsPlanPrice,
+  averageHandlingTime
 }: ChurnCalculatorResultsProps) => {
   if (!results) return null;
   const handleDownloadPDF = () => {
@@ -39,7 +41,7 @@ const ChurnCalculatorResults = ({
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Monthly labor cost savings</span>
-              <span className="font-normal">{formatCurrency(results.monthlySavings)}</span>
+              <span className="font-normal">{formatCurrency((customerCount * 0.69 * averageHandlingTime) / 60)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
