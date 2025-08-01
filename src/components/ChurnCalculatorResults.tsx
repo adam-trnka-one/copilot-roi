@@ -40,7 +40,7 @@ const ChurnCalculatorResults = ({
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
-              <span className="text-sm text-gray-600">Monthly labor cost savings</span>
+              <span className="text-sm text-gray-600">Human agent hours saved</span>
               <span className="font-normal">{formatCurrency((customerCount * 0.69 * averageHandlingTime) / 60)}</span>
             </div>
 
