@@ -51,12 +51,12 @@ const ChurnCalculatorInputs = ({
   return <>
       <CardHeader>
         <CardTitle>Enter your data</CardTitle>
-        <CardDescription>We'll use this to calculate your support AI Copilot impact</CardDescription>
+        <CardDescription>We'll use this to calculate your impact</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="customer-count" className="calculator-label">Number of monthly customer conversations</Label>
+            <Label htmlFor="customer-count" className="calculator-label">Number of support conversations (monthly)</Label>
             <InfoTooltip content="How many customer conversations your team handles each month" />
           </div>
           <div className="flex items-center gap-4">
@@ -67,38 +67,38 @@ const ChurnCalculatorInputs = ({
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="revenue-per-customer" className="calculator-label">Resolved conversations (resolutions) with Copilot (%)</Label>
+            <Label htmlFor="revenue-per-customer" className="calculator-label">Support Copilot resolution rate</Label>
             <InfoTooltip content="Percentage of conversations resolved by the AI Copilot without human intervention" />
           </div>
           <div className="flex items-center gap-4">
             <Slider id="revenue-per-customer" min={50} max={80} step={1} value={[averageRevenuePerCustomer]} onValueChange={value => setAverageRevenuePerCustomer(value[0])} className="flex-1" />
             <div className="relative">
               <Input type="number" value={averageRevenuePerCustomer} min={50} max={80} step="1" onChange={e => handleInputChange(setAverageRevenuePerCustomer, e.target.value, 50, 80)} className="w-20 pr-6" />
-              <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-muted-foreground">%</span>
+              
             </div>
           </div>
         </div>
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="churn-rate" className="calculator-label">Live agent hourly cost (USD/hour)</Label>
+            <Label htmlFor="churn-rate" className="calculator-label">Live agent cost (USD/hour)</Label>
             <InfoTooltip content="Average cost per hour for live agent support" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider id="churn-rate" min={5} max={50} step={1} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
-            <Input type="number" value={currentChurnRate} min={5} max={50} step="1" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 5, 50)} className="w-20" />
+            <Slider id="churn-rate" min={10} max={100} step={1} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
+            <Input type="number" value={currentChurnRate} min={10} max={100} step="1" onChange={e => handleInputChange(setCurrentChurnRate, e.target.value, 10, 100)} className="w-20" />
           </div>
         </div>
 
         <div className="calculator-input">
           <div className="flex items-center justify-between">
-            <Label htmlFor="handling-time" className="calculator-label">Average handling time per conversation (minutes)</Label>
+            <Label htmlFor="handling-time" className="calculator-label">Handling time per conversation (minutes)</Label>
             <InfoTooltip content="Average time spent handling each customer conversation" />
           </div>
           <div className="flex items-center gap-4">
-            <Slider id="handling-time" min={1} max={100} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
+            <Slider id="handling-time" min={7} max={60} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
             <div className="relative">
-              <Input type="number" value={handlingTime} min={1} max={100} step="1" onChange={e => handleInputChange(setHandlingTime, e.target.value, 1, 100)} className="w-20 pr-8" />
+              <Input type="number" value={handlingTime} min={7} max={60} step="1" onChange={e => handleInputChange(setHandlingTime, e.target.value, 7, 60)} className="w-20 pr-8" />
               
             </div>
           </div>
