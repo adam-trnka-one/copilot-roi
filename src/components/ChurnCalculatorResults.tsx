@@ -24,7 +24,7 @@ const ChurnCalculatorResults = ({
   if (!results) return null;
 
   const getXPrice = (conversations: number): number => {
-    if (conversations < 2000) return -149;
+    if (conversations <= 2000) return -149;
     if (conversations <= 3000) return -224;
     if (conversations <= 5000) return -262;
     if (conversations <= 10000) return -374;
