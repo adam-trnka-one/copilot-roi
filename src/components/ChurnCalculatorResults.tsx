@@ -43,7 +43,7 @@ const ChurnCalculatorResults = ({
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Human agent hours saved</span>
-              <span className="font-normal">{formatCurrency((Math.round((customerCount * averageRevenuePerCustomer) / 100) * averageHandlingTime) / 60)}</span>
+              <span className="font-normal">{formatNumber((Math.round((customerCount * averageRevenuePerCustomer) / 100) * averageHandlingTime) / 60)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
