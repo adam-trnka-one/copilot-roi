@@ -7,7 +7,7 @@ export const CUSTOMER_STEPS = [
     length: (5000 - 1000) / 500 + 1
   }, (_, i) => 1000 + (i + 1) * 500),
   ...Array.from({
-    length: (20000 - 5000) / 1000 + 1
+    length: (20000 - 5000) / 1000
   }, (_, i) => 5000 + (i + 1) * 1000)
 ];
 
