@@ -3,6 +3,7 @@ import { CardHeader, CardTitle, CardDescription, CardContent } from "@/component
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { formatCurrency, formatNumber } from "@/utils/churnCalculator";
+import { generateAndDownloadPDF } from "@/utils/pdfGenerator";
 interface ChurnCalculatorResultsProps {
   customerCount: number;
   currentChurnRate: number;
@@ -36,8 +37,13 @@ const ChurnCalculatorResults = ({
   const copilotMonthlyCost = (conversationsResolvedByCopilot * 0.69) + getXPrice(customerCount);
 
   const handleDownloadPDF = () => {
-    // This would trigger the PDF download functionality
-    console.log("Download PDF clicked");
+    generateAndDownloadPDF({
+      customerCount,
+      averageRevenuePerCustomer,
+      currentChurnRate,
+      results,
+      productFruitsPlanPrice
+    });
   };
   return <>
       <CardHeader>
