@@ -22,6 +22,19 @@ const ChurnCalculatorResults = ({
   averageRevenuePerCustomer
 }: ChurnCalculatorResultsProps) => {
   if (!results) return null;
+
+  const getXPrice = (conversations: number): number => {
+    if (conversations < 2000) return -149;
+    if (conversations <= 3000) return -224;
+    if (conversations <= 5000) return -262;
+    if (conversations <= 10000) return -374;
+    if (conversations <= 20000) return -449;
+    return -449; // fallback for > 20000
+  };
+
+  const conversationsResolvedByCopilot = Math.round((customerCount * averageRevenuePerCustomer) / 100);
+  const copilotMonthlyCost = (conversationsResolvedByCopilot * 0.69) + getXPrice(customerCount);
+
   const handleDownloadPDF = () => {
     // This would trigger the PDF download functionality
     console.log("Download PDF clicked");
@@ -48,7 +61,7 @@ const ChurnCalculatorResults = ({
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Copilot monthly cost</span>
-              <span className="font-normal text-[#ff4747]">-{formatCurrency(productFruitsPlanPrice)}</span>
+              <span className="font-normal text-[#ff4747]">{formatCurrency(copilotMonthlyCost)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
