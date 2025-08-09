@@ -11,13 +11,15 @@ interface ChurnCalculatorResultsProps {
   } | null;
   productFruitsPlanPrice: number;
   averageHandlingTime: number;
+  averageRevenuePerCustomer: number;
 }
 const ChurnCalculatorResults = ({
   customerCount,
   currentChurnRate,
   results,
   productFruitsPlanPrice,
-  averageHandlingTime
+  averageHandlingTime,
+  averageRevenuePerCustomer
 }: ChurnCalculatorResultsProps) => {
   if (!results) return null;
   const handleDownloadPDF = () => {
@@ -35,13 +37,13 @@ const ChurnCalculatorResults = ({
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600 font-normal">Conversations resolved by Copilot</span>
               <span className="font-medium">
-                {formatNumber(Math.round((customerCount * currentChurnRate) / 100))}
+                {formatNumber(Math.round((customerCount * averageRevenuePerCustomer) / 100))}
               </span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Human agent hours saved</span>
-              <span className="font-normal">{formatCurrency((customerCount * (currentChurnRate / 100) * averageHandlingTime) / 60)}</span>
+              <span className="font-normal">{formatCurrency((customerCount * (averageRevenuePerCustomer / 100) * averageHandlingTime) / 60)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
