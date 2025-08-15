@@ -34,7 +34,10 @@ const ChurnCalculatorResults = ({
   };
 
   const conversationsResolvedByCopilot = Math.round((customerCount * averageRevenuePerCustomer) / 100);
-  const copilotMonthlyCost = (conversationsResolvedByCopilot * 0.69) + getXPrice(customerCount);
+  const hoursResolvedByCopilot = (conversationsResolvedByCopilot * averageHandlingTime) / 60;
+  const laborCostSavings = hoursResolvedByCopilot * currentChurnRate;
+  const copilotMonthlyCost = Math.abs((conversationsResolvedByCopilot * 0.69) + getXPrice(conversationsResolvedByCopilot));
+  const netMonthlySavings = laborCostSavings - copilotMonthlyCost;
 
   const handleDownloadPDF = () => {
     generateAndDownloadPDF({
@@ -56,13 +59,13 @@ const ChurnCalculatorResults = ({
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600 font-normal">Conversations resolved by Copilot</span>
               <span className="font-medium">
-                {formatNumber(Math.round((customerCount * averageRevenuePerCustomer) / 100))}
+                {formatNumber(conversationsResolvedByCopilot)}
               </span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Human agent hours saved</span>
-              <span className="font-normal">{formatNumber((Math.round((customerCount * averageRevenuePerCustomer) / 100) * averageHandlingTime) / 60)}</span>
+              <span className="font-normal">{formatNumber(hoursResolvedByCopilot)}</span>
             </div>
 
             <div className="flex justify-between items-center border-b pb-2">
@@ -72,7 +75,7 @@ const ChurnCalculatorResults = ({
 
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-sm text-gray-600">Labor cost savings</span>
-              <span className="font-medium">{formatCurrency(((Math.round((customerCount * averageRevenuePerCustomer) / 100) * averageHandlingTime) / 60) * currentChurnRate)}</span>
+              <span className="font-medium">{formatCurrency(laborCostSavings)}</span>
             </div>
           </div>
 
@@ -80,7 +83,7 @@ const ChurnCalculatorResults = ({
             <div className="text-center">
               <p className="text-sm text-gray-500">Your net monthly savings</p>
               <p className="text-[28pt] font-bold text-[#03BF92]">
-                {formatCurrency(((Math.round((customerCount * averageRevenuePerCustomer) / 100) * averageHandlingTime) / 60) * currentChurnRate - productFruitsPlanPrice)}
+                {formatCurrency(netMonthlySavings)}
               </p>
             </div>
           </div>
