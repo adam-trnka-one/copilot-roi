@@ -83,10 +83,6 @@ const ChurnCalculatorResults = ({
                 {formatCurrency(((Math.round((customerCount * averageRevenuePerCustomer) / 100) * averageHandlingTime) / 60) * currentChurnRate - productFruitsPlanPrice)}
               </p>
             </div>
-            <Button onClick={handleDownloadPDF} className="bg-[#FF751D] hover:bg-[#E05A00] text-white flex items-center gap-2">
-              <Download className="h-4 w-4" />
-              Download PDF
-            </Button>
           </div>
         </div>
       </CardContent>
