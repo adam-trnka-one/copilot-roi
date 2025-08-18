@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ChurnCalculator from "@/components/ChurnCalculator";
+import productFruitsLogo from "@/assets/product-fruits-logo-sharp.png";
 const Index = () => {
   return <div className="min-h-screen flex flex-col">
       <main className="flex-1">
@@ -8,7 +9,7 @@ const Index = () => {
             <div className="text-center mb-12">
               <div className="mb-8">
                 <img 
-                  src="/lovable-uploads/ab3fe1d6-1539-405b-858e-243e67662e13.png" 
+                  src={productFruitsLogo} 
                   alt="Product Fruits" 
                   className="mx-auto h-12 mb-6"
                 />
