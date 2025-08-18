@@ -50,7 +50,7 @@ const ChurnCalculatorResults = ({
   };
   return <>
       <CardHeader>
-        <CardTitle>Your Support Cost Savings</CardTitle>
+        <CardTitle>Your support cost savings</CardTitle>
         <CardDescription>Based on your data, here's the business impact of Support Copilot</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
