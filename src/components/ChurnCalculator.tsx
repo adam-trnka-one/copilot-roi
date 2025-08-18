@@ -20,8 +20,8 @@ interface ROIResults {
 const ChurnCalculator = () => {
   const [customerCount, setCustomerCount] = useState(300);
   const [averageRevenuePerCustomer, setAverageRevenuePerCustomer] = useState(66);
-  const [currentChurnRate, setCurrentChurnRate] = useState(20);
-  const [handlingTime, setHandlingTime] = useState(30);
+  const [currentChurnRate, setCurrentChurnRate] = useState(30);
+  const [handlingTime, setHandlingTime] = useState(10);
   const potentialChurnReduction = 0.30;
   const [results, setResults] = useState<ROIResults | null>(null);
   const customerSliderIndex = CUSTOMER_STEPS.findIndex(v => v === customerCount);
