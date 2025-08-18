@@ -30,7 +30,7 @@ const InfoTooltip = ({
         <HelpCircle className="h-4 w-4 text-gray-400" />
       </TooltipTrigger>
       <TooltipContent side="right" align="start" className="max-w-[280px]">
-        <p className="text-white text-opacity-95">{content}</p>
+        <p className="text-black">{content}</p>
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>;
