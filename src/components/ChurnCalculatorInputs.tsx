@@ -57,7 +57,7 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="customer-count" className="calculator-label">Number of support conversations (monthly)</Label>
-            <InfoTooltip content="How many customer conversations your team handles each month" />
+            <InfoTooltip content="Monthly average of customer conversations handled by your team" />
           </div>
           <div className="flex items-center gap-4">
             <Slider id="customer-count" min={0} max={CUSTOMER_STEPS.length - 1} step={1} value={[customerSliderIndex]} onValueChange={([index]) => setSliderByIndex(index)} className="flex-1" />
@@ -68,7 +68,7 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="revenue-per-customer" className="calculator-label">Support Copilot resolution rate</Label>
-            <InfoTooltip content="Percentage of conversations resolved by the AI Copilot without human intervention" />
+            <InfoTooltip content="Most teams see a 50 to 80% resolution rate, depending on product complexity and the quality of documentation. A resolution means the end-user got what they needed without human support." />
           </div>
           <div className="flex items-center gap-4">
             <Slider id="revenue-per-customer" min={50} max={80} step={1} value={[averageRevenuePerCustomer]} onValueChange={value => setAverageRevenuePerCustomer(value[0])} className="flex-1" />
@@ -82,7 +82,7 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="churn-rate" className="calculator-label">Live agent cost (USD/hour)</Label>
-            <InfoTooltip content="Average cost per hour for live agent support" />
+            <InfoTooltip content="Average fully loaded hourly rate of a support agent on your team" />
           </div>
           <div className="flex items-center gap-4">
             <Slider id="churn-rate" min={10} max={100} step={1} value={[currentChurnRate]} onValueChange={value => setCurrentChurnRate(value[0])} className="flex-1" />
@@ -93,7 +93,7 @@ const ChurnCalculatorInputs = ({
         <div className="calculator-input">
           <div className="flex items-center justify-between">
             <Label htmlFor="handling-time" className="calculator-label">Handling time per conversation (minutes)</Label>
-            <InfoTooltip content="Average time spent handling each customer conversation" />
+            <InfoTooltip content="Average time a human agent spends per conversation" />
           </div>
           <div className="flex items-center gap-4">
             <Slider id="handling-time" min={7} max={60} step={1} value={[handlingTime]} onValueChange={value => setHandlingTime(value[0])} className="flex-1" />
