@@ -51,7 +51,7 @@ const ChurnCalculatorInputs = ({
   return <>
       <CardHeader>
         <CardTitle>Enter your data</CardTitle>
-        <CardDescription>We'll use this to calculate your impact</CardDescription>
+        <CardDescription>We'll use this to calculate your savings</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="calculator-input">
