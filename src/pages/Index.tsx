@@ -48,7 +48,7 @@ const Index = () => {
                   >
                     consultation
                   </a>
-                  {" "}with one of our experts
+                  {" "}with one of our experts.
                 </p>
               </div>
             </div>
