@@ -25,18 +25,18 @@ const ChurnCalculatorResults = ({
   if (!results) return null;
 
   const getXPrice = (conversations: number): number => {
-    if (conversations <= 2000) return -149;
-    if (conversations <= 3000) return -224;
-    if (conversations <= 5000) return -262;
-    if (conversations <= 10000) return -374;
-    if (conversations <= 20000) return -449;
-    return -449; // fallback for > 20000
+    if (conversations <= 2000) return 149;
+    if (conversations <= 3000) return 224;
+    if (conversations <= 5000) return 262;
+    if (conversations <= 10000) return 374;
+    if (conversations <= 20000) return 449;
+    return 449; // fallback for > 20000
   };
 
   const conversationsResolvedByCopilot = Math.round((customerCount * averageRevenuePerCustomer) / 100);
   const hoursResolvedByCopilot = Math.round((conversationsResolvedByCopilot * averageHandlingTime) / 60);
   const laborCostSavings = Math.round(hoursResolvedByCopilot * currentChurnRate);
-  const copilotMonthlyCost = Math.round(Math.abs((conversationsResolvedByCopilot * 0.69) + getXPrice(conversationsResolvedByCopilot)));
+  const copilotMonthlyCost = Math.round((conversationsResolvedByCopilot * 0.69) + getXPrice(conversationsResolvedByCopilot));
   const netMonthlySavings = laborCostSavings - copilotMonthlyCost;
 
   const handleDownloadPDF = () => {
