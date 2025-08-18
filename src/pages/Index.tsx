@@ -1,11 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ChurnCalculator from "@/components/ChurnCalculator";
+import productFruitsLogo from "@/assets/product-fruits-logo.png";
 const Index = () => {
   return <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8 bg-[fffffff] bg-white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
+              <div className="mb-8">
+                <img 
+                  src={productFruitsLogo} 
+                  alt="Product Fruits" 
+                  className="mx-auto h-12 mb-6"
+                />
+              </div>
               <h2 className="text-3xl text-gray-900 mb-4 font-semibold md:text-4xl">Find out how much Support Copilot saves you</h2>
               <p className="whitespace-nowrap overflow-x-auto mx-auto text-slate-950 px-0 text-lg font-normal">Automatically resolve repetitive support questions with Copilot</p>
             </div>
