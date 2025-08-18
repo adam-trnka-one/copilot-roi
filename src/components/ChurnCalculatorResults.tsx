@@ -36,7 +36,7 @@ const ChurnCalculatorResults = ({
   const conversationsResolvedByCopilot = Math.round((customerCount * averageRevenuePerCustomer) / 100);
   const hoursResolvedByCopilot = Math.round((conversationsResolvedByCopilot * averageHandlingTime) / 60);
   const laborCostSavings = Math.round(hoursResolvedByCopilot * currentChurnRate);
-  const copilotMonthlyCost = Math.round((conversationsResolvedByCopilot * 0.69) + getXPrice(conversationsResolvedByCopilot));
+  const copilotMonthlyCost = Math.round((conversationsResolvedByCopilot - 40) * 0.69);
   const netMonthlySavings = laborCostSavings - copilotMonthlyCost;
 
   const handleDownloadPDF = () => {
