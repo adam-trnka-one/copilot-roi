@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ChurnCalculator from "@/components/ChurnCalculator";
+import pfLogo from "@/assets/pf_logo.svg";
 const Index = () => {
   return <div className="min-h-screen flex flex-col">
       <main className="flex-1">
@@ -8,7 +9,7 @@ const Index = () => {
             <div className="text-center mb-12">
               <div className="mb-8">
                 <img 
-                  src="/src/assets/pf_logo.svg" 
+                  src={pfLogo}
                   alt="Product Fruits" 
                   className="mx-auto h-12 mb-6"
                 />
