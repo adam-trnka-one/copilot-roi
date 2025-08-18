@@ -35,7 +35,7 @@ const Index = () => {
                     href="https://productfruits.com/product/copilot" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-[#03BF92] hover:text-[#02A07A] underline font-medium"
+                    className="text-orange-500 hover:text-orange-600 underline font-medium"
                   >
                     Support Copilot
                   </a>
@@ -44,7 +44,7 @@ const Index = () => {
                     href="https://calendly.com/d/cv4g-v53-jmq/copilot-consultation" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-[#03BF92] hover:text-[#02A07A] underline font-medium"
+                    className="text-orange-500 hover:text-orange-600 underline font-medium"
                   >
                     consultation
                   </a>
