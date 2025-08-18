@@ -6,7 +6,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-8 bg-[fffffff] bg-white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl text-gray-900 mb-4 font-semibold md:text-4xl">Calculate your Support Copilot impact</h2>
+              <h2 className="text-3xl text-gray-900 mb-4 font-semibold md:text-4xl">Find out how much Support Copilot saves you</h2>
               <p className="whitespace-nowrap overflow-x-auto mx-auto text-slate-950 px-0 text-lg font-normal">Automatically resolve repetitive support questions with Copilot</p>
             </div>
 
