@@ -8,7 +8,7 @@ const Index = () => {
             <div className="text-center mb-12">
               <div className="mb-8">
                 <img 
-                  src="/lovable-uploads/74b26f22-ba3b-42a7-a304-b64bfaaf359e.png" 
+                  src="/src/assets/pf_logo.svg" 
                   alt="Product Fruits" 
                   className="mx-auto h-12 mb-6"
                 />
