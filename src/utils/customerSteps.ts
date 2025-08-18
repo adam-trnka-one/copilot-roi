@@ -1,5 +1,6 @@
 // Predefined customer steps for the slider
 export const CUSTOMER_STEPS = [
+  50,
   ...Array.from({
     length: (1000 - 100) / 100 + 1
   }, (_, i) => 100 + i * 100),
