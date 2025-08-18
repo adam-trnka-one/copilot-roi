@@ -27,6 +27,30 @@ const Index = () => {
               </div>
 
               <ChurnCalculator />
+              
+              <div className="text-center mt-12 pt-8 border-t border-gray-200">
+                <p className="text-lg text-gray-700">
+                  Learn more about{" "}
+                  <a 
+                    href="https://productfruits.com/product/copilot" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#03BF92] hover:text-[#02A07A] underline font-medium"
+                  >
+                    Support Copilot
+                  </a>
+                  {" "}or book your 1-on-1{" "}
+                  <a 
+                    href="https://calendly.com/d/cv4g-v53-jmq/copilot-consultation" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#03BF92] hover:text-[#02A07A] underline font-medium"
+                  >
+                    consultation
+                  </a>
+                  {" "}with one of our experts
+                </p>
+              </div>
             </div>
           </div>
         </div>
